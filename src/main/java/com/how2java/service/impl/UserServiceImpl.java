@@ -3,8 +3,6 @@ package com.how2java.service.impl;
 import com.how2java.mapper.UserMapper;
 import com.how2java.mapper.UserRoleMapper;
 import com.how2java.pojo.User;
-import com.how2java.pojo.UserExample;
-import com.how2java.service.UserRoleService;
 import com.how2java.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,18 +15,7 @@ public class UserServiceImpl implements UserService {
 	@Autowired
 	UserMapper userMapper;
 	@Autowired
-	UserRoleService userRoleService;
-	@Autowired
 	UserRoleMapper userRoleMapper;
-
-	@Override
-	public String getPassword(String name) {
-		User user = getByName(name);
-		if (null == user)
-			return null;
-		return user.getPassword();
-	}
-
 
 
 	@Override
@@ -55,7 +42,6 @@ public class UserServiceImpl implements UserService {
 
 	}
 
-	//-------------------------------------
 	@Override
 	public User getByName(String name) {
 

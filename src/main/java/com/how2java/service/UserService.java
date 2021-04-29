@@ -5,7 +5,6 @@ import com.how2java.pojo.User;
 import java.util.List;
 
 public interface UserService {
-	public String getPassword(String name);
 
 	public User getByName(String name);
 

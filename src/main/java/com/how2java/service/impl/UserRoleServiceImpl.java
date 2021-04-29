@@ -3,7 +3,6 @@ package com.how2java.service.impl;
 import com.how2java.mapper.UserRoleMapper;
 import com.how2java.pojo.User;
 import com.how2java.pojo.UserRole;
-import com.how2java.pojo.UserRoleExample;
 import com.how2java.service.UserRoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -38,24 +37,6 @@ public class UserRoleServiceImpl implements UserRoleService {
 
 	}
 
-	@Override
-	public void deleteByUser(long userId) {
-		UserRoleExample example = new UserRoleExample();
-		example.createCriteria().andUidEqualTo(userId);
-		List<UserRole> urs = userRoleMapper.selectByExample(example);
-		for (UserRole userRole : urs) {
-			userRoleMapper.deleteByPrimaryKey(userRole.getId());
-		}
-	}
 
-	@Override
-	public void deleteByRole(long roleId) {
-		UserRoleExample example = new UserRoleExample();
-		example.createCriteria().andRidEqualTo(roleId);
-		List<UserRole> urs = userRoleMapper.selectByExample(example);
-		for (UserRole userRole : urs) {
-			userRoleMapper.deleteByPrimaryKey(userRole.getId());
-		}
-	}
 
 }

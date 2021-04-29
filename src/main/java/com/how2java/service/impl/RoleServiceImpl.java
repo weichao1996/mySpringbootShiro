@@ -4,7 +4,6 @@ import com.how2java.mapper.RoleMapper;
 import com.how2java.mapper.RolePermissionMapper;
 import com.how2java.mapper.UserRoleMapper;
 import com.how2java.pojo.*;
-import com.how2java.service.RolePermissionService;
 import com.how2java.service.RoleService;
 import com.how2java.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;

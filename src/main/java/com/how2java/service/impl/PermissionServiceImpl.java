@@ -5,7 +5,6 @@ import com.how2java.mapper.RolePermissionMapper;
 import com.how2java.pojo.*;
 import com.how2java.service.PermissionService;
 import com.how2java.service.RoleService;
-import com.how2java.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,8 +18,6 @@ public class PermissionServiceImpl implements PermissionService {
 
 	@Autowired
 	PermissionMapper permissionMapper;
-	@Autowired
-	UserService userService;
 	@Autowired
 	RoleService roleService;
 	@Autowired
@@ -78,9 +75,6 @@ public class PermissionServiceImpl implements PermissionService {
 	}
 
 
-
-
-//-------------------------------------
 	@Override
 	public boolean needInterceptor(String requestURI) {
 		List<Permission> ps = permissionMapper.getAll();
